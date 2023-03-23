@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendario</title>
+    <!-- fontawesome  icons -->
+    <script
+      src="https://kit.fontawesome.com/7417ec9eb9.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="calendar-wrapper">
+      <div class="calendar-month">
+        <h1 class="month"></h1>
+        <span class="year"></span>
+        <div class="calendar-icon-btn">
+          <span id="prev" class="fa-solid fa-chevron-left"></span>
+          <span id="next" class="fa-solid fa-chevron-right"></span>
+        </div>
+      </div>
+
+      <div class="calendar-week">
+        <h2>Domingo</h2>
+        <h2>Segunda</h2>
+        <h2>Terça</h2>
+        <h2>Quarta</h2>
+        <h2>Quinta</h2>
+        <h2>Sexta</h2>
+        <h2>Sábado</h2>
+      </div>
+
+      <!-- Dinamic div -->
+      <div class="calendar-days"></div>
+
+      <dialog class="modal">
+        <h2 class="new-evt">Novo Evento</h2>
+        <h2 class="current-evt">Evento Atual</h2>
+        <fieldset>
+          <legend class="modal-close">X</legend>
+          <p class="text-evt">XXX bbbb CCCC</p>
+          <input type="text" class="modal-input" />
+          <button class="button-create">Criar Evento</button>
+          <button class="button-delete">Excruir</button>
+        </fieldset>
+      </dialog>
+      <div class="display-wrapper">
+        <h1 class="display"></h1>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
