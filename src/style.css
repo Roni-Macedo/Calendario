@@ -73,6 +73,7 @@ body {
 }
 
 .calendar-days div {
+  cursor: pointer;
   height: 70px;
   font-size: 1.2rem;
   text-align: center;
@@ -82,10 +83,6 @@ body {
 }
 .calendar-days div:hover {
   background-color: #fadddd;
-}
-
-.day:hover {
-  cursor: pointer;
 }
 
 #inative {

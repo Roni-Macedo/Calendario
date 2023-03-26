@@ -105,7 +105,9 @@ function loadEvent() {
         const dayEvt = document.createElement('p')
         dayEvt.textContent = events[key].title
         dayEvt.classList.add('event')
+        dayEvt.classList.add('day-event')
         evt.parentNode.appendChild(dayEvt)
+        evt.parentNode.classList.add(events[key].class)
         evt.classList.add(events[key].class)
       }
     }
@@ -126,6 +128,7 @@ function saveEvent(key, value, evt) {
     dayEvt.classList.add('event')
     dayEvt.textContent = value
     evt.target.parentNode.appendChild(dayEvt)
+    evt.target.parentNode.classList.add('day-event')
     evt.target.classList.add('day-event')
   }
 }
@@ -151,8 +154,9 @@ buttonNextPrev.forEach(button => {
 })
 
 calendarDays.addEventListener('click', evt => {
+  let click = evt.target.textContent
   for (const key in events) {
-    if (evt.target.textContent === events[key].date) {
+    if (click === events[key].date) {
       textEvent.textContent = events[key].title
     }
   }
@@ -161,7 +165,7 @@ calendarDays.addEventListener('click', evt => {
     modal.showModal()
 
     buttonCreate.onclick = () => {
-      saveEvent(evt.target.textContent, modalInput.value, evt)
+      saveEvent(click, modalInput.value, evt)
       evt.target.classList.add('day-event')
       modalInput.value = ''
       modal.close()
@@ -170,7 +174,7 @@ calendarDays.addEventListener('click', evt => {
   if (evt.target.classList.contains('day-event')) {
     modalEvent.showModal()
     buttonDelete.onclick = () => {
-      deleteEvent(evt.target.textContent)
+      deleteEvent(click)
       renderCalendar()
       modalEvent.close()
     }
