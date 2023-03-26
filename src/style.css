@@ -11,15 +11,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #0d9da6;
 }
 
 .calendar-wrapper {
-  background-color: white;
+  background-color: #faeeee;
   width: 100vw;
   max-width: 600px;
-  /* height: 100vh; */
   padding: 1rem;
+  margin-top: 1rem;
 }
 
 .display {
@@ -45,12 +44,12 @@ body {
   display: flex;
   font-size: 1.5rem;
   gap: 3rem;
-  color: #393D46;
+  color: #393d46;
 }
 
 .calendar-icon-btn span:hover {
   cursor: pointer;
-  color: grey;
+  color: #e6c3c3;
 }
 
 .calendar-week {
@@ -64,7 +63,7 @@ body {
 
 .calendar-week h2 {
   font-weight: 100;
-  color: #393D46;
+  color: #393d46;
 }
 
 .calendar-days {
@@ -77,49 +76,47 @@ body {
   height: 70px;
   font-size: 1.2rem;
   text-align: center;
-  border: 1px solid #ececec;
-  padding: .5rem;
+  border: 1px solid #0d9da6;
+  padding: 0.5rem;
   margin: 1px;
+}
+.calendar-days div:hover {
+  background-color: #fadddd;
 }
 
 .day:hover {
   cursor: pointer;
-  background-color: #66A72C;
 }
 
 #inative {
-  opacity: .5;
+  opacity: 0.3;
   cursor: default;
-  /* cursor: pointer; */
   height: 70px;
   font-size: 1.2rem;
-  /* text-align: center; */
-  border: 1px solid #ececec;
-  padding: .5rem;
+  border: 1px solid #393d46;
+  padding: 0.5rem;
   margin: 1px;
 }
 
 #active {
-  border: 1px solid #0d9da6;
+  background-color: #95dbe09a;
 }
 
 .event {
   width: 100%;
   height: 20px;
-  font-size: .7rem;
+  font-size: 0.7rem;
   font-weight: 100;
   overflow: hidden;
-  border: 1px solid #FEC009;
+  border-bottom: 1px solid #66a72c;
+  color: #66a72c;
 }
 
 .modal {
   margin: 10% auto;
   width: 70%;
   border-radius: 5px;
-  /* background-color: #313237; */
 }
-
-
 
 .modal fieldset {
   display: flex;
@@ -153,34 +150,28 @@ body {
   padding-left: 10px;
   margin: 10px;
   border-radius: 5px;
-  /* background-color: #abb4a5; */
-  /* border: none; */
-  /* color: #192535; */
 }
 
 .button-create {
   width: 250px;
   height: 35px;
   text-align: center;
-  padding-top: .3rem;
-  border: 2px solid #66A72C;
+  padding-top: 0.3rem;
+  border: 2px solid #66a72c;
   border-radius: 5px;
   font-size: 1rem;
 }
 
 .button-create:hover {
   cursor: pointer;
-  border: 2px solid #66A72C;
+  border: 2px solid #66a72c;
 }
 
 .modal-event {
   margin: 10% auto;
   width: 70%;
   border-radius: 5px;
-  /* background-color: #313237; */
 }
-
-
 
 .modal-event fieldset {
   display: flex;
@@ -216,7 +207,7 @@ body {
   width: 250px;
   height: 35px;
   text-align: center;
-  padding-top: .3rem;
+  padding-top: 0.3rem;
   border: 2px solid tomato;
   border-radius: 5px;
   font-size: 1rem;
