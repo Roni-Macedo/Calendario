@@ -3,6 +3,18 @@ const calendarMonth = document.querySelector('.calendar-month h1')
 const buttonNextPrev = document.querySelectorAll('.calendar-icon-btn span')
 const display = document.querySelector('.display')
 
+const modal = document.querySelector('.modal')
+const modalEvent = document.querySelector('.modal-event')
+
+const modalClose = document.querySelector('.modal-close')
+const modalCloseEvent = document.querySelector('.modal-close-event')
+
+const modalInput = document.querySelector('.modal-input')
+const textEvent = document.querySelector('.text-event')
+
+const buttonCreate = document.querySelector('.button-create')
+const buttonDelete = document.querySelector('.button-delete')
+
 let date = new Date()
 let year = date.getFullYear()
 let month = date.getMonth()
@@ -63,39 +75,42 @@ function renderCalendar() {
   }
   calendarMonth.textContent = `${months[month]} ${year}`
   calendarDays.innerHTML = tagDiv
+
   loadEvent()
   displayDateHors()
   setInterval(displayDateHors, 60000)
 }
 
-// renderCalendar()
-
-// Evento button prev e next mês
-buttonNextPrev.forEach(button => {
-  button.addEventListener('click', () => {
-    month = button.id === 'prev' ? month - 1 : month + 1
-    if (month < 0 || month > 11) {
-      date = new Date(year, month)
-      year = date.getFullYear()
-      month = date.getMonth()
-    } else {
-      date = new Date()
-    }
-    renderCalendar()
+function displayDateHors() {
+  let weekDay = date.toLocaleDateString('pt-BR', {
+    weekday: 'long',
+    day: 'numeric',
+    month: 'long'
   })
-})
+  let hours = new Date().toLocaleTimeString([], {
+    hour: '2-digit',
+    minute: '2-digit'
+  })
+  display.textContent = weekDay + ' ' + hours
+}
 
-const modal = document.querySelector('.modal')
-const modalEvent = document.querySelector('.modal-event')
-
-const modalClose = document.querySelector('.modal-close')
-const modalCloseEvent = document.querySelector('.modal-close-event')
-
-const modalInput = document.querySelector('.modal-input')
-const textEvent = document.querySelector('.text-event')
-
-const buttonCreate = document.querySelector('.button-create')
-const buttonDelete = document.querySelector('.button-delete')
+function loadEvent() {
+  const calendarDay = document.querySelectorAll('.day')
+  calendarDay.forEach(evt => {
+    for (const key in events) {
+      let eventDay =
+        events[key].date === evt.textContent &&
+        months[month] === events[key].month
+      if (eventDay) {
+        const dayEvt = document.createElement('p')
+        dayEvt.textContent = events[key].title
+        dayEvt.classList.add('event')
+        evt.parentNode.appendChild(dayEvt)
+        evt.classList.add(events[key].class)
+      }
+    }
+  })
+}
 
 function saveEvent(key, value, evt) {
   if (modalInput.value) {
@@ -112,52 +127,28 @@ function saveEvent(key, value, evt) {
     dayEvt.textContent = value
     evt.target.parentNode.appendChild(dayEvt)
     evt.target.classList.add('day-event')
-    // loadEvent()
   }
 }
 
-function loadEvent() {
-  const calendarDay = document.querySelectorAll('.day')
-  calendarDay.forEach(e => {
-    for (const key in events) {
-      let eventDay =
-        events[key].date === e.textContent &&
-        months[month] === events[key].month
-      if (eventDay) {
-        console.log()
-        const evts = document.createElement('p')
-        evts.textContent = events[key].title
-        evts.classList.add('event')
-        e.parentNode.appendChild(evts)
-        // console.log(e.parentNode)
-        e.classList.add(events[key].class)
-      }
-    }
-  })
-}
-// loadEvent()
 function deleteEvent(click) {
-  // const evtDay = document.querySelector('.calendar-days div p')
   events = events.filter(event => event.date !== click)
   localStorage.setItem('events', JSON.stringify(events))
-  // evtDay.classList.remove('event')
 }
 
-function displayDateHors() {
-  let weekDay = date.toLocaleDateString('pt-BR', {
-    weekday: 'long',
-    day: 'numeric',
-    month: 'long'
+// Evento button prev e next mês
+buttonNextPrev.forEach(button => {
+  button.addEventListener('click', () => {
+    month = button.id === 'prev' ? month - 1 : month + 1
+    if (month < 0 || month > 11) {
+      date = new Date(year, month)
+      year = date.getFullYear()
+      month = date.getMonth()
+    } else {
+      date = new Date()
+    }
+    renderCalendar()
   })
-  let hours = new Date().toLocaleTimeString([], {
-    hour: '2-digit',
-    minute: '2-digit'
-  })
-  display.textContent = weekDay + ' ' + hours
-  // displayMDL.textContent = weekDay + ' ' + hours
-}
-// displayDateHors()
-// setInterval(displayDateHors, 60000)
+})
 
 calendarDays.addEventListener('click', evt => {
   for (const key in events) {
