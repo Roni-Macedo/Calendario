@@ -2,7 +2,7 @@
 
 ## Calendario feito com JavaScript, HTML e CSS.
 
-# funcionalidades \*
+# funcionalidades.
 
 - Responsivo.
 - Salvar os dados na localStorage.
@@ -12,3 +12,5 @@
 - hora atualizada em min.
 
 <img src="https://user-images.githubusercontent.com/87907917/227803205-d29c0892-5c75-4ed0-88b0-69b6603addba.png" title="tela1" height="350" weidth="350">
+
+<img src="https://user-images.githubusercontent.com/87907917/227803354-fb88665d-c8d8-4188-ba79-9a28a9cc7273.png" title="tela1" height="350" weidth="350">
