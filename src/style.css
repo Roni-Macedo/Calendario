@@ -11,14 +11,18 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  /* height: 100vh; */
 }
+
+/* Para tela tipo celular usar no body {height:100vh;} E no  alendar-wrapper { height: 100%; } */
 
 .calendar-wrapper {
   background-color: #faeeee;
+  box-shadow: 2px 2px 3px 2px #0d9da6;
   width: 100vw;
   max-width: 600px;
+  height: 100%;
   padding: 1rem;
-  margin-top: 1rem;
 }
 
 .display {
@@ -111,7 +115,7 @@ body {
 
 .modal {
   margin: 10% auto;
-  width: 70%;
+  width: 360px;
   border-radius: 5px;
   background-color: #acf0f5;
 }
@@ -168,7 +172,7 @@ body {
 
 .modal-event {
   margin: 10% auto;
-  width: 70%;
+  width: 360px;
   border-radius: 5px;
   background-color: #f9e2e2;
 }
