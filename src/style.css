@@ -4,6 +4,7 @@
   margin: 0;
   box-sizing: border-box;
   letter-spacing: 0.1rem;
+  font-family: 'Roboto Slab', serif;
 }
 
 body {
@@ -11,4 +12,217 @@ body {
   align-items: center;
   justify-content: center;
   background-color: #0d9da6;
+}
+
+.calendar-wrapper {
+  background-color: white;
+  width: 100vw;
+  max-width: 600px;
+  /* height: 100vh; */
+  padding: 1rem;
+}
+
+.display {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.calendar-month {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid #0d9da6;
+  margin-bottom: 2rem;
+}
+
+.calendar-month h1 {
+  font-size: 2.5rem;
+  font-weight: 300;
+}
+
+.calendar-icon-btn {
+  display: flex;
+  font-size: 1.5rem;
+  gap: 3rem;
+  color: #393D46;
+}
+
+.calendar-icon-btn span:hover {
+  cursor: pointer;
+  color: grey;
+}
+
+.calendar-week {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.calendar-week h2 {
+  font-weight: 100;
+  color: #393D46;
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  justify-content: space-around;
+}
+
+.calendar-days div {
+  height: 70px;
+  font-size: 1.2rem;
+  text-align: center;
+  border: 1px solid #ececec;
+  padding: .5rem;
+  margin: 1px;
+}
+
+.day:hover {
+  cursor: pointer;
+  background-color: #66A72C;
+}
+
+#inative {
+  opacity: .5;
+  cursor: default;
+  /* cursor: pointer; */
+  height: 70px;
+  font-size: 1.2rem;
+  /* text-align: center; */
+  border: 1px solid #ececec;
+  padding: .5rem;
+  margin: 1px;
+}
+
+#active {
+  border: 1px solid #0d9da6;
+}
+
+.event {
+  width: 100%;
+  height: 20px;
+  font-size: .7rem;
+  font-weight: 100;
+  overflow: hidden;
+  border: 1px solid #FEC009;
+}
+
+.modal {
+  margin: 10% auto;
+  width: 70%;
+  border-radius: 5px;
+  /* background-color: #313237; */
+}
+
+
+
+.modal fieldset {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.modal fieldset legend {
+  text-align: right;
+  color: #fec009;
+  font-size: 1.5rem;
+  font-weight: 100;
+}
+
+.modal fieldset legend:hover {
+  cursor: pointer;
+  color: red;
+  font-weight: 300;
+}
+
+.new-event {
+  font-size: 1.5rem;
+}
+
+.modal fieldset input {
+  width: 250px;
+  height: 35px;
+  font-size: 1.5rem;
+  padding-left: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  /* background-color: #abb4a5; */
+  /* border: none; */
+  /* color: #192535; */
+}
+
+.button-create {
+  width: 250px;
+  height: 35px;
+  text-align: center;
+  padding-top: .3rem;
+  border: 2px solid #66A72C;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.button-create:hover {
+  cursor: pointer;
+  border: 2px solid #66A72C;
+}
+
+.modal-event {
+  margin: 10% auto;
+  width: 70%;
+  border-radius: 5px;
+  /* background-color: #313237; */
+}
+
+
+
+.modal-event fieldset {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.modal-event fieldset legend {
+  text-align: right;
+  color: #fec009;
+  font-size: 1.5rem;
+  font-weight: 100;
+}
+
+.modal-event fieldset legend:hover {
+  cursor: pointer;
+  color: red;
+  font-weight: 300;
+}
+
+.current-event {
+  font-size: 1.5rem;
+}
+
+.text-event {
+  border-bottom: 1px solid #fec009;
+  font-weight: 100;
+}
+
+.button-delete {
+  width: 250px;
+  height: 35px;
+  text-align: center;
+  padding-top: .3rem;
+  border: 2px solid tomato;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.button-delete:hover {
+  cursor: pointer;
+  border: 2px solid tomato;
 }
