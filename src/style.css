@@ -116,6 +116,7 @@ body {
   margin: 10% auto;
   width: 70%;
   border-radius: 5px;
+  background-color: #acf0f5;
 }
 
 .modal fieldset {
@@ -158,19 +159,21 @@ body {
   text-align: center;
   padding-top: 0.3rem;
   border: 2px solid #66a72c;
+  background-color: #9ad6da;
   border-radius: 5px;
   font-size: 1rem;
 }
 
 .button-create:hover {
   cursor: pointer;
-  border: 2px solid #66a72c;
+  background-color: #84b7bb;
 }
 
 .modal-event {
   margin: 10% auto;
   width: 70%;
   border-radius: 5px;
+  background-color: #f9e2e2;
 }
 
 .modal-event fieldset {
@@ -208,12 +211,13 @@ body {
   height: 35px;
   text-align: center;
   padding-top: 0.3rem;
-  border: 2px solid tomato;
+  border: 2px solid #ff907d;
+  background-color: #fbccc3;
   border-radius: 5px;
   font-size: 1rem;
 }
 
 .button-delete:hover {
   cursor: pointer;
-  border: 2px solid tomato;
+  background-color: #eeb7ad;
 }
