@@ -47,6 +47,7 @@ function renderCalendar() {
     lastDayofMonth = new Date(year, month, lastDateofMonth).getDay(),
     // obtendo a última data do mês anterior
     lastDateofLastMonth = new Date(year, month, 0).getDate()
+
   let tagDiv = ''
 
   // Dias do mes anterior
@@ -56,17 +57,21 @@ function renderCalendar() {
 
   // Dias do mes atual
   for (let i = 1; i <= lastDateofMonth; i++) {
+    //Cria um objeto Date para o dia atual
+    let currentDate = new Date(year, month, i)
+
+    // Verefica o dia atual
     let isToday =
       i === date.getDate() &&
       month === new Date().getMonth() &&
       year === new Date().getFullYear()
         ? 'active'
         : ''
-    tagDiv += `
-    <div id="${isToday}">
-      <p class="day">${i}</p>
-    </div>
-    `
+
+    // Verifica se o dia é um domingo
+    currentDate.getDay() === 0
+      ? (tagDiv += `<div class="sunday" id="${isToday}"><p class="day">${currentDate.getDate()}</p></div>`)
+      : (tagDiv += `<div id="${isToday}"><p class="day">${currentDate.getDate()}</p></div>`)
   }
 
   // Dias do prox. mes

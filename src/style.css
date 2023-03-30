@@ -113,6 +113,10 @@ body {
   color: #66a72c;
 }
 
+.sunday {
+  color: red;
+}
+
 .modal {
   margin: 10% auto;
   width: 360px;
